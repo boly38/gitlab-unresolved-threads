@@ -10,10 +10,12 @@ if (/^https:\/\/gitlab\.*.*\/merge_requests\/?(\?.*)?$/.test(window.location.hre
   }
 
   function run() {
-    $(".issue").each(function () {
-      const anchor = $(this).find(".issue-title a")[0];
-      const metaList = $(this).find(".issuable-meta ul, ul.controls")[0];
+    console.log("run")
+    $(".merge-request").each(function () {
+      const anchor = $(this).find(".merge-request-title-text a")[0];
+      const metaList = $(this).find(".issuable-info-container ul, ul.controls")[0];
 
+      // DEBUG // console.log(anchor)
       if (!anchor || !metaList) return;
 
       $.ajax({
@@ -52,7 +54,10 @@ if (/^https:\/\/gitlab\.*.*\/merge_requests\/?(\?.*)?$/.test(window.location.hre
 
         observer.observe(targetNode, config);
 
-        console.log("MutationObserver is now watching .content-list");
+        console.log("MutationObserver is now watching!3 .content-list");
+        setTimeout(() => {
+          run();
+        }, 3000);
       } else {
         throw new Error(".content-list element not found!");
       }
