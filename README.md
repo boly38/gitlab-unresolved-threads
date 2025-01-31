@@ -8,3 +8,6 @@ https://chrome.google.com/webstore/detail/gitlab-unresolved-threads/dhmmedpdnmhm
 
 
 Pull requests are welcome :) 
+
+## How to contribute ?
+cf. [Contributing](./.github/CONTRIBUTING.md)
